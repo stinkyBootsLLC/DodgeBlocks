@@ -29,17 +29,16 @@ public class PLayerController : MonoBehaviour
 
 	void PlayerMovement ()
 	{
-		// horizontal inputs
+		// horizontal inputs for mobile devices
+
 		float x = CrossPlatformInputManager.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
 
 		Vector2 newPosition =  rb.position + Vector2.right * x;
-
 
 		// limits the player movement to mapwidth defined above
 		newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
 
 		rb.MovePosition(newPosition);
-
 
 	}
 
